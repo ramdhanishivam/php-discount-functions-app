@@ -1,0 +1,20 @@
+{
+    "name": "shivam/codetasker",
+    "description": "Discount Functions App",
+    "require-dev": {
+      "brainmaestro/composer-git-hooks": "^2.6"
+    },
+    "extra": {
+      "hooks": {
+        "pre-commit": [
+          "echo committing as $(git config user.name)",
+          "sh bin/block-commits-with-merge-conflict.sh"
+        ]
+      }
+    },
+    "scripts": {
+      "format": "phpcbf --standard=phpcs.xml.dist --report-summary --report-source",
+      "lint": "phpcs --standard=phpcs.xml.dist --report-summary --report-source"
+    }
+  }
+  
